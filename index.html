@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vutivi Shibambo • Data Scientist</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N6DJSN3Q');</script>
+    <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -223,7 +230,10 @@
         <section id="attachments" onclick="location.href='#attachments'">
             <h2>Attachments</h2>
             <p>View my full professional background by downloading my resume.</p>
-            <a href="Vutivi_Shibambo_Data_Scientist_CV.pdf" download class="download-btn">
+            <a href="Vutivi_Shibambo_Data_Scientist_CV.pdf" 
+            download 
+            class="download-btn"
+            onclick="gtag('event', 'cv_download', {'event_category': 'Engagement', 'event_label': 'Resume'});">
                 <span>Download CV</span>
                 <i class="icon">↓</i>
             </a>
@@ -232,5 +242,4 @@
     </main>
 
 </body>
-
 </html>
