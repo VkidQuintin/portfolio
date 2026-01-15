@@ -631,3 +631,14 @@ section:hover {
     }
 }
 
+/* Targeted Italics for Personal Info Links */
+.info-list li a {
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+/* Optional: Make them change color slightly when hovered */
+.info-list li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
