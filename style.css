@@ -552,3 +552,43 @@ section:hover {
     border-color: rgba(0, 212, 255, 0.3);
     background-color: rgba(26, 26, 46, 0.9);
 }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    /* 1. Turn the Sidebar into a Top Bar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* No longer sticks to the left */
+        border-right: none;
+        border-bottom: 1px solid #16213e;
+        padding: 1rem;
+    }
+
+    /* 2. Remove the margin from the main content */
+    .content {
+        margin-left: 0; 
+        padding: 20px;
+    }
+
+    /* 3. Stack the Personal Info (Photo on top, text below) */
+    .personal-info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo img {
+        width: 200px;
+        height: auto;
+    }
+
+    /* 4. Make Project and Skill cards full width */
+    .project-grid, .skills-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    /* 5. Make the form rows stack vertically */
+    .form-row {
+        flex-direction: column;
+    }
+}
