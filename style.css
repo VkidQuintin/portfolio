@@ -555,40 +555,79 @@ section:hover {
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    /* 1. Turn the Sidebar into a Top Bar */
+    body {
+        flex-direction: column; /* Stacks sidebar on top of content */
+        overflow-x: hidden;    /* Prevents horizontal scrolling */
+    }
+
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative; /* No longer sticks to the left */
+        position: relative;    /* Sidebar stays at the top, doesn't float */
+        padding: 1.5rem 1rem;
         border-right: none;
-        border-bottom: 1px solid #16213e;
-        padding: 1rem;
+        border-bottom: 2px solid #16213e;
     }
 
-    /* 2. Remove the margin from the main content */
-    .content {
-        margin-left: 0; 
-        padding: 20px;
+    .sidebar-header h2 {
+        white-space: normal;   /* Allows name to wrap if it's too long */
+        font-size: 1.2rem;
     }
 
-    /* 3. Stack the Personal Info (Photo on top, text below) */
-    .personal-info-container {
-        flex-direction: column;
+    .nav-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for menu items to save space */
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 8px;
         text-align: center;
     }
 
+    .content {
+        margin-left: 0;        /* Removes the desktop gap */
+        padding: 15px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;       /* Smaller titles for mobile */
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 40px;
+        border-radius: 15px;   /* Less aggressive curves on mobile */
+        transform: none !important; /* Disables the hover-scale which feels buggy on touch */
+    }
+
+    /* Stacks photo and bio vertically */
+    .personal-info-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .profile-photo img {
-        width: 200px;
+        width: 100%;           /* Photo takes full width of the card */
+        max-width: 250px;
         height: auto;
     }
 
-    /* 4. Make Project and Skill cards full width */
-    .project-grid, .skills-wrapper {
+    /* Stacks the project cards */
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
-    /* 5. Make the form rows stack vertically */
+    /* Stacks form fields */
     .form-row {
         flex-direction: column;
     }
+    
+    /* Fixes timeline on small screens */
+    .timeline {
+        padding-left: 15px;
+    }
 }
+
